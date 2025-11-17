@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://6rrmybkq3c4p"]
+
+[ext_resource type="Script" uid="uid://cl8fosiie42x" path="res://entities/peg/peg_particles/peg_particles.gd" id="1_i04ga"]
+
+[sub_resource type="Gradient" id="Gradient_t50il"]
+offsets = PackedFloat32Array(0, 0.73125)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ejim"]
+gradient = SubResource("Gradient_t50il")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_i04ga"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_t50il"]
+curve = SubResource("Curve_i04ga")
+
+[sub_resource type="Curve" id="Curve_g7mt8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_md0c2"]
+curve = SubResource("Curve_g7mt8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_32tw3"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 100, 0)
+scale_min = 0.099999994
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_md0c2")
+alpha_curve = SubResource("CurveTexture_t50il")
+
+[node name="PegParticles" type="Node2D"]
+script = ExtResource("1_i04ga")
+
+[node name="PegHit" type="GPUParticles2D" parent="."]
+emitting = false
+texture = SubResource("GradientTexture2D_7ejim")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_32tw3")
+
+[connection signal="finished" from="PegHit" to="." method="_on_peg_hit_finished"]

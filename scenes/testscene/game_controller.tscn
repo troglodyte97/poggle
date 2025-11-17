@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://fhvhdaddxhu"]
+
+[ext_resource type="Script" uid="uid://bbp7qhln7nn5p" path="res://scenes/testscene/game_controller.gd" id="1_rc0pn"]
+[ext_resource type="PackedScene" uid="uid://brruynfjcwio4" path="res://entities/launcher/ball_launcher.tscn" id="1_ts4rt"]
+[ext_resource type="Texture2D" uid="uid://cki4w5q4hyrjg" path="res://assets/backgrounds/test_bg_big.jpg" id="3_burlk"]
+[ext_resource type="Script" uid="uid://cef182gd3gew0" path="res://scenes/testscene/entity_delete_area.gd" id="3_h843c"]
+[ext_resource type="PackedScene" uid="uid://dxs5tvevga53v" path="res://entities/peg/peg_state/entity_peg_state_machine.tscn" id="6_hwpyo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qu5nd"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gwypd"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1v75b"]
+
+[node name="GameController" type="Node2D" node_paths=PackedStringArray("ball_launcher", "deletion_area")]
+script = ExtResource("1_rc0pn")
+ball_launcher = NodePath("GameElements/BallLauncher")
+deletion_area = NodePath("GameElements/Walls/DeletionArea")
+
+[node name="GameElements" type="Node2D" parent="."]
+
+[node name="BackGround" type="Node2D" parent="GameElements"]
+
+[node name="Forest" type="Sprite2D" parent="GameElements/BackGround"]
+position = Vector2(688, 440)
+scale = Vector2(0.6516052, 0.67777777)
+texture = ExtResource("3_burlk")
+
+[node name="BallLauncher" parent="GameElements" instance=ExtResource("1_ts4rt")]
+position = Vector2(768, 0)
+effects = Array[PackedScene]([])
+
+[node name="PegContainer" type="Node2D" parent="GameElements"]
+
+[node name="EntityPegStateMachine" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(704, 384)
+
+[node name="EntityPegStateMachine6" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(624, 336)
+
+[node name="EntityPegStateMachine7" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(624, 288)
+
+[node name="EntityPegStateMachine8" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(624, 240)
+
+[node name="EntityPegStateMachine9" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(784, 336)
+
+[node name="EntityPegStateMachine10" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(784, 288)
+
+[node name="EntityPegStateMachine11" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(784, 240)
+
+[node name="EntityPegStateMachine2" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(664, 384)
+
+[node name="EntityPegStateMachine3" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(744, 384)
+
+[node name="EntityPegStateMachine4" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(784, 384)
+
+[node name="EntityPegStateMachine5" parent="GameElements/PegContainer" instance=ExtResource("6_hwpyo")]
+position = Vector2(624, 384)
+
+[node name="Walls" type="Node2D" parent="GameElements"]
+
+[node name="WallLeft" type="StaticBody2D" parent="GameElements/Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameElements/Walls/WallLeft"]
+shape = SubResource("WorldBoundaryShape2D_qu5nd")
+
+[node name="WallRight" type="StaticBody2D" parent="GameElements/Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameElements/Walls/WallRight"]
+position = Vector2(1440, 0)
+shape = SubResource("WorldBoundaryShape2D_gwypd")
+
+[node name="DeletionArea" type="Area2D" parent="GameElements/Walls"]
+script = ExtResource("3_h843c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameElements/Walls/DeletionArea"]
+position = Vector2(768, 904)
+shape = SubResource("WorldBoundaryShape2D_1v75b")
+
+[connection signal="body_entered" from="GameElements/Walls/DeletionArea" to="GameElements/Walls/DeletionArea" method="_on_body_entered"]
