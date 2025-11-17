@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2otaudk3xd2q"]
-
-[ext_resource type="Script" uid="uid://chq5vqpx8d5jl" path="res://entities/ball/ball_effects/effects/gravity_effect.gd" id="1_5eb6p"]
-
-[node name="GravityEffect" type="Node2D"]
-script = ExtResource("1_5eb6p")

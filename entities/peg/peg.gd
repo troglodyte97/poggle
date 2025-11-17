@@ -1,4 +1,4 @@
-class_name EntityPeg
+class_name Peg
 extends RigidBody2D
 
 @export_group("Node Setup")

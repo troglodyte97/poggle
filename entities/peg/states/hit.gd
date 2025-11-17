@@ -1,10 +1,6 @@
 extends PegState
 
-@export var removal_particles: PackedScene
-@export var removal_time: float = 1.0
-
-
-func enter(previous_state_path: String, data: Dictionary = { }) -> void:
+func enter(previous_state_path: String, _data: Dictionary = { }) -> void:
 	if previous_state_path == HIT:
 		return
 

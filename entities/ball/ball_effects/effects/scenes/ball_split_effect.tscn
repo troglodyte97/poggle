@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://brn3xlranu53s"]
-
-[ext_resource type="Script" uid="uid://cnkyy8u7yjslf" path="res://entities/ball/ball_split_effect.gd" id="1_xd6pl"]
-
-[node name="BallSplitEffect" type="Node2D"]
-script = ExtResource("1_xd6pl")
-retrigger = true
