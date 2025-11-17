@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://brruynfjcwio4" path="res://entities/launcher/ball_launcher.tscn" id="1_ts4rt"]
 [ext_resource type="Texture2D" uid="uid://cki4w5q4hyrjg" path="res://assets/backgrounds/test_bg_big.jpg" id="3_burlk"]
 [ext_resource type="Script" uid="uid://cef182gd3gew0" path="res://scenes/testscene/entity_delete_area.gd" id="3_h843c"]
-[ext_resource type="PackedScene" uid="uid://dxs5tvevga53v" path="res://entities/peg/peg_state/entity_peg_state_machine.tscn" id="6_hwpyo"]
+[ext_resource type="PackedScene" uid="uid://dxs5tvevga53v" path="res://entities/peg/entity_peg.tscn" id="6_hwpyo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qu5nd"]
 normal = Vector2(1, 0)
