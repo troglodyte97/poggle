@@ -1,8 +1,9 @@
 class_name EntityPeg
-extends RigidBody2D
+extends AnimatableBody2D
 
 @export_group("Node Setup")
 @export var state_machine: StateMachine
+@export var hit_area: Area2D
 
 @export_subgroup("Effects")
 @export var animations: AnimationPlayer

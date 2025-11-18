@@ -21,5 +21,5 @@ func validate_collision(body: PhysicsBody2D) -> void:
 func _ready() -> void:
 	await owner.ready
 	peg = owner as EntityPeg
-	peg.body_entered.connect(validate_collision)
+	peg.hit_area.body_entered.connect(validate_collision)
 	assert(peg != null, "Must be child of Peg")
