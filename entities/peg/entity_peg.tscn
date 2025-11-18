@@ -13,10 +13,6 @@
 [ext_resource type="Script" uid="uid://l7d88vij4sty" path="res://tools/troglodyte/note_player/note_player.gd" id="11_whuak"]
 [ext_resource type="AudioStream" uid="uid://befwjdhdjxpjh" path="res://entities/peg/assets/audio/pop2.wav" id="12_tbf1p"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gck2o"]
-bounce = 0.25
-absorbent = true
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4s81"]
 radius = 17.492855
 
@@ -244,7 +240,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [true, false]
 }
 tracks/3/type = "value"
@@ -256,7 +252,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [true, false]
 }
 
@@ -267,14 +263,13 @@ _data = {
 &"hit_effect": SubResource("Animation_pf0fw")
 }
 
-[node name="EntityPeg" type="RigidBody2D" node_paths=PackedStringArray("state_machine", "animations", "hit_light", "particles", "hit_sound", "sprite_container", "main_sprite")]
-physics_material_override = SubResource("PhysicsMaterial_gck2o")
-freeze = true
-freeze_mode = 1
-contact_monitor = true
-max_contacts_reported = 1
+[sub_resource type="CircleShape2D" id="CircleShape2D_whuak"]
+radius = 21.095022
+
+[node name="EntityPeg" type="AnimatableBody2D" node_paths=PackedStringArray("state_machine", "hit_area", "animations", "hit_light", "particles", "hit_sound", "sprite_container", "main_sprite")]
 script = ExtResource("1_caf2o")
 state_machine = NodePath("StateMachine")
+hit_area = NodePath("HitArea")
 animations = NodePath("PegAnimations")
 hit_light = NodePath("HitEffects/HitLight")
 particles = NodePath("HitEffects/Particles")
@@ -358,4 +353,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_bkdwp")
 }
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="HitCollision" type="CollisionShape2D" parent="HitArea"]
+shape = SubResource("CircleShape2D_whuak")

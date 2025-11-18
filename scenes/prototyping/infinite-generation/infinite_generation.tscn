@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b25ms53ptlan6"]
+
+[ext_resource type="Script" uid="uid://i0c5h40r7w4y" path="res://scenes/prototyping/infinite-generation/infinite_generation.gd" id="1_80l28"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_umis0"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fc4d4"]
+normal = Vector2(-1, 0)
+
+[node name="InfiniteGeneration" type="Node2D"]
+script = ExtResource("1_80l28")
+
+[node name="GameWallLeft" type="StaticBody2D" parent="."]
+position = Vector2(32, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWallLeft"]
+shape = SubResource("WorldBoundaryShape2D_umis0")
+
+[node name="GameWallRight" type="StaticBody2D" parent="."]
+position = Vector2(928, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWallRight"]
+shape = SubResource("WorldBoundaryShape2D_fc4d4")
