@@ -17,8 +17,7 @@ func enter(previous_state_path: String, _data: Dictionary = { }) -> void:
 			peg.particles.process_material.set_color(state_color)
 			peg.main_sprite.get_material().set_shader_parameter("flash_color", state_color)
 
-	peg.hit_sound.pitch_scale = randf_range(0.90, 1.10)
-	peg.hit_sound.play()
+	peg.hit_sound.play_from_allowed()
 	peg.animations.play("hit_effect")
 	await peg.animations.animation_finished
 

@@ -1,0 +1,381 @@
+[gd_scene load_steps=7 format=3 uid="uid://6418d60o5hnp"]
+
+[ext_resource type="Script" uid="uid://ckqu3xrg5iv0v" path="res://scenes/prototyping/test_game/testing.gd" id="1_11sq5"]
+[ext_resource type="Script" uid="uid://oqea86p02ctc" path="res://scenes/prototyping/test_game/pegs.gd" id="1_co24e"]
+[ext_resource type="PackedScene" uid="uid://dxs5tvevga53v" path="res://entities/peg/entity_peg.tscn" id="1_qrja6"]
+[ext_resource type="PackedScene" uid="uid://brruynfjcwio4" path="res://entities/launcher/entity_launcher.tscn" id="3_feb8i"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqkvx"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_11sq5"]
+normal = Vector2(-1, 0)
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("ball_launcher", "camera")]
+script = ExtResource("1_11sq5")
+ball_launcher = NodePath("EntityLauncher")
+camera = NodePath("Camera2D")
+
+[node name="GamePegContainer" type="Node2D" parent="."]
+script = ExtResource("1_co24e")
+
+[node name="EntityPeg" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 256)
+
+[node name="EntityPeg2" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 256)
+
+[node name="EntityPeg3" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 256)
+
+[node name="EntityPeg4" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 256)
+
+[node name="EntityPeg5" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 256)
+
+[node name="EntityPeg6" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 256)
+
+[node name="EntityPeg7" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 256)
+
+[node name="EntityPeg8" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 320)
+
+[node name="EntityPeg9" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 320)
+
+[node name="EntityPeg10" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 320)
+
+[node name="EntityPeg11" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(96, 320)
+
+[node name="EntityPeg12" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 320)
+
+[node name="EntityPeg13" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 320)
+
+[node name="EntityPeg14" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 320)
+
+[node name="EntityPeg15" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 384)
+
+[node name="EntityPeg16" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 384)
+
+[node name="EntityPeg17" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 384)
+
+[node name="EntityPeg18" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 384)
+
+[node name="EntityPeg19" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 384)
+
+[node name="EntityPeg20" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 384)
+
+[node name="EntityPeg21" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(864, 384)
+
+[node name="EntityPeg22" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 448)
+
+[node name="EntityPeg23" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 448)
+
+[node name="EntityPeg24" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 448)
+
+[node name="EntityPeg25" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 448)
+
+[node name="EntityPeg26" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 448)
+
+[node name="EntityPeg27" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 448)
+
+[node name="EntityPeg28" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 448)
+
+[node name="EntityPeg29" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 512)
+
+[node name="EntityPeg30" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 512)
+
+[node name="EntityPeg31" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 512)
+
+[node name="EntityPeg32" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 512)
+
+[node name="EntityPeg33" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 512)
+
+[node name="EntityPeg34" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 512)
+
+[node name="EntityPeg35" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 512)
+
+[node name="EntityPeg36" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 576)
+
+[node name="EntityPeg37" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 576)
+
+[node name="EntityPeg38" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 576)
+
+[node name="EntityPeg39" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(96, 576)
+
+[node name="EntityPeg40" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 576)
+
+[node name="EntityPeg41" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 576)
+
+[node name="EntityPeg42" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 576)
+
+[node name="EntityPeg43" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 640)
+
+[node name="EntityPeg44" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 640)
+
+[node name="EntityPeg45" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 640)
+
+[node name="EntityPeg46" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 640)
+
+[node name="EntityPeg47" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 640)
+
+[node name="EntityPeg48" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 640)
+
+[node name="EntityPeg49" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(864, 640)
+
+[node name="EntityPeg50" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 704)
+
+[node name="EntityPeg51" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 704)
+
+[node name="EntityPeg52" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 704)
+
+[node name="EntityPeg53" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 704)
+
+[node name="EntityPeg54" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 704)
+
+[node name="EntityPeg55" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 704)
+
+[node name="EntityPeg56" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 704)
+
+[node name="EntityPeg57" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 768)
+
+[node name="EntityPeg58" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 768)
+
+[node name="EntityPeg59" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 768)
+
+[node name="EntityPeg60" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 768)
+
+[node name="EntityPeg61" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 768)
+
+[node name="EntityPeg62" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 768)
+
+[node name="EntityPeg63" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 768)
+
+[node name="EntityPeg64" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 832)
+
+[node name="EntityPeg65" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 832)
+
+[node name="EntityPeg66" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 832)
+
+[node name="EntityPeg67" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(96, 832)
+
+[node name="EntityPeg68" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 832)
+
+[node name="EntityPeg69" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 832)
+
+[node name="EntityPeg70" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 832)
+
+[node name="EntityPeg71" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 896)
+
+[node name="EntityPeg72" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 896)
+
+[node name="EntityPeg73" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 896)
+
+[node name="EntityPeg74" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 896)
+
+[node name="EntityPeg75" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 896)
+
+[node name="EntityPeg76" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 896)
+
+[node name="EntityPeg77" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(864, 896)
+
+[node name="EntityPeg78" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 960)
+
+[node name="EntityPeg79" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 960)
+
+[node name="EntityPeg80" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 960)
+
+[node name="EntityPeg81" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 960)
+
+[node name="EntityPeg82" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 960)
+
+[node name="EntityPeg83" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 960)
+
+[node name="EntityPeg84" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 960)
+
+[node name="EntityPeg85" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 1024)
+
+[node name="EntityPeg86" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 1024)
+
+[node name="EntityPeg87" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 1024)
+
+[node name="EntityPeg88" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 1024)
+
+[node name="EntityPeg89" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 1024)
+
+[node name="EntityPeg90" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 1024)
+
+[node name="EntityPeg91" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 1024)
+
+[node name="EntityPeg92" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 1088)
+
+[node name="EntityPeg93" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 1088)
+
+[node name="EntityPeg94" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 1088)
+
+[node name="EntityPeg95" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(96, 1088)
+
+[node name="EntityPeg96" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 1088)
+
+[node name="EntityPeg97" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 1088)
+
+[node name="EntityPeg98" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 1088)
+
+[node name="EntityPeg99" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 1152)
+
+[node name="EntityPeg100" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 1152)
+
+[node name="EntityPeg101" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(352, 1152)
+
+[node name="EntityPeg102" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(224, 1152)
+
+[node name="EntityPeg103" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(608, 1152)
+
+[node name="EntityPeg104" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(736, 1152)
+
+[node name="EntityPeg105" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(864, 1152)
+
+[node name="EntityPeg106" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(480, 1216)
+
+[node name="EntityPeg107" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(416, 1216)
+
+[node name="EntityPeg108" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(288, 1216)
+
+[node name="EntityPeg109" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(160, 1216)
+
+[node name="EntityPeg110" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(544, 1216)
+
+[node name="EntityPeg111" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(672, 1216)
+
+[node name="EntityPeg112" parent="GamePegContainer" instance=ExtResource("1_qrja6")]
+position = Vector2(800, 1216)
+
+[node name="GameWallLeft" type="StaticBody2D" parent="."]
+position = Vector2(32, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWallLeft"]
+shape = SubResource("WorldBoundaryShape2D_yqkvx")
+
+[node name="GameWallRight" type="StaticBody2D" parent="."]
+position = Vector2(928, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameWallRight"]
+shape = SubResource("WorldBoundaryShape2D_11sq5")
+
+[node name="EntityLauncher" parent="." instance=ExtResource("3_feb8i")]
+position = Vector2(480, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 256)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 1.0
+drag_top_margin = 1.0
+drag_right_margin = 1.0
+editor_draw_screen = false

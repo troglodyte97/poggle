@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://brruynfjcwio4"]
+
+[ext_resource type="Script" uid="uid://cx7jmekw4hj" path="res://entities/launcher/entity_launcher.gd" id="1_tiq4l"]
+[ext_resource type="PackedScene" uid="uid://ba4a4pke78i2c" path="res://entities/ball/entity_ball.tscn" id="2_8nul4"]
+[ext_resource type="Texture2D" uid="uid://bbdf750oai5ur" path="res://entities/ball/assets/sprites/ball.png" id="3_8nul4"]
+
+[node name="EntityLauncher" type="Node2D"]
+script = ExtResource("1_tiq4l")
+ball_scene = ExtResource("2_8nul4")
+
+[node name="LaunchPoint" type="Marker2D" parent="."]
+position = Vector2(90, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="LaunchPoint"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_8nul4")
+
+[node name="LaunchCooldown" type="Timer" parent="."]
+one_shot = true
